@@ -2,4 +2,4 @@ Bu GPS Takip uygulaması, Sakarya Üniversitesi Bilgisayar ve Bilişim Mühendis
 
 **Danışman:** Prof. Dr. Ümit KOCABIÇAK
 
-Projenin ioT tarafını yine aynı program öğrencisi Ali Pişkin tarafından yapılmaktadır.
+Projenin ioT tarafını yine aynı program öğrencisi Ali Pişkin tarafından yapılmaktadır. Danışmanı Doç. Dr. Cüneyt Bayılmış'dır.
