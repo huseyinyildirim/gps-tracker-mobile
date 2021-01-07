@@ -1,0 +1,4 @@
+#Sat Oct 31 23:50:03 EET 2020
+base.0=/Users/huseyinyildirim/Sites/bulutreyon_mobile/build/app/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

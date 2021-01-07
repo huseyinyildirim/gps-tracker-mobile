@@ -1,0 +1,78 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bulutreyon.shop"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+9        android:targetSdkVersion="28" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:8:5-66
+14-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:8:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:9:5-78
+15-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:10:5-75
+16-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:10:22-73
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:11:5-81
+17-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:11:22-78
+18    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+18-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:12:5-78
+18-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:12:22-76
+19
+20    <application
+20-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:13:5-34:19
+21        android:name="io.flutter.app.FlutterApplication"
+21-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:14:9-57
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /Users/huseyinyildirim/.gradle/caches/transforms-2/files-2.1/a9db740b60dc36334c2480530f66f4a2/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:16:9-43
+25        android:label="bulutreyon_mobile" >
+25-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:15:9-42
+26        <activity
+26-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:17:9-28:20
+27            android:name="com.bulutreyon.shop.MainActivity"
+27-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:18:13-41
+28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+28-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:21:13-163
+29            android:hardwareAccelerated="true"
+29-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:22:13-47
+30            android:launchMode="singleTop"
+30-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:19:13-43
+31            android:theme="@style/LaunchTheme"
+31-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:20:13-47
+32            android:windowSoftInputMode="adjustResize" >
+32-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:23:13-55
+33            <intent-filter>
+33-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:24:13-27:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:25:17-68
+34-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:25:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:26:17-76
+36-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:26:27-74
+37            </intent-filter>
+38        </activity>
+39        <!--
+40             Don't delete the meta-data below.
+41             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+42        -->
+43        <meta-data
+43-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:31:9-33:33
+44            android:name="flutterEmbedding"
+44-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:32:13-44
+45            android:value="2" />
+45-->/Users/huseyinyildirim/Sites/bulutreyon_mobile/android/app/src/main/AndroidManifest.xml:33:13-30
+46    </application>
+47
+48</manifest>
