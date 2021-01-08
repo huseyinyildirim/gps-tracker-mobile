@@ -206,7 +206,7 @@
 		</data>
 		<key>Frameworks/device_info.framework/device_info</key>
 		<data>
-		OnU69SMqftTFeB2RFMVYkUCQDm8=
+		kNuT2ElR2uFnCt5LLJJassXFtT0=
 		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>Frameworks/package_info.framework/package_info</key>
 		<data>
-		t7jJGmeAuW4xrfNfGHLoAI9vJoQ=
+		NxmDleEAQr7z8uSQd0jtcFzw+zg=
 		</data>
 		<key>Frameworks/path_provider.framework/Info.plist</key>
 		<data>
@@ -290,7 +290,7 @@
 		</data>
 		<key>Frameworks/path_provider.framework/path_provider</key>
 		<data>
-		YHlSFH7V7geoyzeB7Sl6fBJG/7I=
+		WODEHwUwab3LJwUdHqpART34tCA=
 		</data>
 		<key>Frameworks/screen.framework/Info.plist</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Frameworks/sentry_flutter.framework/sentry_flutter</key>
 		<data>
-		Y7pQ7HZrp+EVC8/IVYXvxsQH/yA=
+		tuS/2mjQ+iEXXtp2C7gPU5sECoU=
 		</data>
 		<key>Frameworks/shared_preferences.framework/Info.plist</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Frameworks/shared_preferences.framework/shared_preferences</key>
 		<data>
-		+Nsmaiuy8Ss6Ft1U5RqG5qslbSc=
+		tPsyAIXr5ShfWnF1KOd7iZYU0qE=
 		</data>
 		<key>Frameworks/sqflite.framework/Info.plist</key>
 		<data>
@@ -338,7 +338,7 @@
 		</data>
 		<key>Frameworks/sqflite.framework/sqflite</key>
 		<data>
-		esG4ctBhXPANyrFernQKlKP46kM=
+		a/1xX3mZ4leKm07Qp5bJpsqUgRs=
 		</data>
 		<key>Frameworks/video_player.framework/Info.plist</key>
 		<data>
@@ -1601,11 +1601,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OnU69SMqftTFeB2RFMVYkUCQDm8=
+			kNuT2ElR2uFnCt5LLJJassXFtT0=
 			</data>
 			<key>hash2</key>
 			<data>
-			LmuzONIEmtne0XG6v0G9PJFJy4ncoV20m8eqtwJ7Nx4=
+			IChX/0fmxEyMl97HiROI4PDU5SVbmPxFXUIlaNQvrUE=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
@@ -1799,11 +1799,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t7jJGmeAuW4xrfNfGHLoAI9vJoQ=
+			NxmDleEAQr7z8uSQd0jtcFzw+zg=
 			</data>
 			<key>hash2</key>
 			<data>
-			k/eMVmM6PQE0mp5rxV5wuCAfA1SwjxGEbSid0aYZBFM=
+			wmg3tAelJqQKvU+TMh42IzwP7REzBOJlXhAhOImLNro=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider.framework/Info.plist</key>
@@ -1832,11 +1832,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YHlSFH7V7geoyzeB7Sl6fBJG/7I=
+			WODEHwUwab3LJwUdHqpART34tCA=
 			</data>
 			<key>hash2</key>
 			<data>
-			nGW6488MRDFjF6PjP6xbhSBoCRCYjSm3afdPB5OIbwU=
+			zgXlSKxiKZCixpVDB4t5RO1a/bWUN3Un6W8jTuYikiQ=
 			</data>
 		</dict>
 		<key>Frameworks/screen.framework/Info.plist</key>
@@ -1898,11 +1898,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y7pQ7HZrp+EVC8/IVYXvxsQH/yA=
+			tuS/2mjQ+iEXXtp2C7gPU5sECoU=
 			</data>
 			<key>hash2</key>
 			<data>
-			BNqQMe88S6p5GyGzqdDGQlS2uo0pZeVIvcpiTfXyT1U=
+			q1SDodt0mE3/weHAodzPN/y6qSPd754kPpNxRSiEdFs=
 			</data>
 		</dict>
 		<key>Frameworks/shared_preferences.framework/Info.plist</key>
@@ -1931,11 +1931,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+Nsmaiuy8Ss6Ft1U5RqG5qslbSc=
+			tPsyAIXr5ShfWnF1KOd7iZYU0qE=
 			</data>
 			<key>hash2</key>
 			<data>
-			csi/wDv9oldW/8og+l8buuEsC1tbBvOgfFsr8SITAxA=
+			Rujf7EomiRRStGkrjo3WNUn12rN9tZZXZfXlUpLXulU=
 			</data>
 		</dict>
 		<key>Frameworks/sqflite.framework/Info.plist</key>
@@ -1964,11 +1964,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			esG4ctBhXPANyrFernQKlKP46kM=
+			a/1xX3mZ4leKm07Qp5bJpsqUgRs=
 			</data>
 			<key>hash2</key>
 			<data>
-			TneZUJO4paopQCXmeJrPSAwrHImvzWSCYces3DVGRs0=
+			Y5FhJa97x3lZmvJ3cruFyKOBjuac2pmBAh/xrd5bD+g=
 			</data>
 		</dict>
 		<key>Frameworks/video_player.framework/Info.plist</key>
