@@ -1,9 +1,10 @@
 //region Core
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:sentry/sentry.dart';
+import 'package:gps_tracker_mobile/pages/member/login.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:sentry_flutter/sentry_flutter.dart';
 import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
@@ -27,7 +28,7 @@ import 'package:gps_tracker_mobile/pages/welcome.dart';
 import 'package:gps_tracker_mobile/models/handshake_model.dart';
 //endregion
 
-final SentryClient _sentry = new SentryClient(dsn: "https://a182c5eed4044779b8138a39b1624534@o284904.ingest.sentry.io/5272950");
+//final SentryClient _sentry = new SentryClient(dsn: "https://0a91f4a946fa44ae94fc521f0a6bca34@o284904.ingest.sentry.io/5583150");
 
 Future<HandshakeModel> _getHandshake(String deviceId, String token) async {
   var response = await http.get(AppUrls.handshake,
@@ -56,7 +57,7 @@ bool get isInDebugMode {
   return inDebugMode;
 }
 
-Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+/*Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
   print('Caught error: $error');
 
   if (isInDebugMode) {
@@ -77,13 +78,13 @@ Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
   } else {
     print("Sentry.io'ya rapor edilemedi: ${response.error}");
   }
-}
+}*/
 
 /*
  * Flutter'da oluşan hatalarıda yakalar
  */
-Future<Null> main() async {
-  FlutterError.onError = (FlutterErrorDetails details) async {
+Future<void> main() async {
+  /*FlutterError.onError = (FlutterErrorDetails details) async {
     if (isInDebugMode) {
       FlutterError.dumpErrorToConsole(details);
     } else {
@@ -95,7 +96,15 @@ Future<Null> main() async {
     runApp(new MyApp());
   }, (error, stackTrace) async {
     await _reportError(error, stackTrace);
-  });
+  });*/
+
+  await SentryFlutter.init(
+        (options) {
+      options.dsn = 'https://0a91f4a946fa44ae94fc521f0a6bca34@o284904.ingest.sentry.io/5583150';
+    },
+  );
+
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -103,8 +112,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BulutReyonApp()
+        debugShowCheckedModeBanner: false,
+        home: BulutReyonApp()
     );
   }
 }
@@ -122,6 +131,7 @@ class _BulutReyonAppState extends State<BulutReyonApp> {
   SharedPreferences _sharedPreferences;
 
   String _deviceId, _token;
+  bool _isLogin;
 
   @override
   void dispose() {
@@ -137,6 +147,8 @@ class _BulutReyonAppState extends State<BulutReyonApp> {
       _deviceId = _sharedPreferences.getString(StorageKey.deviceId) != null ? _sharedPreferences.getString(StorageKey.deviceId) : Uuid().v1();
       _token = _sharedPreferences.getString(StorageKey.token) != null ? _sharedPreferences.getString(StorageKey.token) : Uuid().v4();
 
+      _isLogin = _sharedPreferences.getBool(StorageKey.isLogin) != null ? _sharedPreferences.getBool(StorageKey.isLogin) : false;
+
       _getHandshake(_deviceId, _token).then((value) {
         if (value.statusCode == StatusCode.ok) {
 
@@ -145,7 +157,13 @@ class _BulutReyonAppState extends State<BulutReyonApp> {
           _sharedPreferences.setString(StorageKey.accessToken, value.data);
 
           Future.delayed(const Duration(seconds: 4), () async {
-            Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new WelcomePage()));
+
+            if (_isLogin) {
+              Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new WelcomePage()));
+            } else {
+              Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new LoginPage()));
+            }
+
           });
         } else {
           showDialog(
@@ -181,71 +199,71 @@ class _BulutReyonAppState extends State<BulutReyonApp> {
 
   Stack splash() {
     return Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [Colors.blueAccent, Colors.redAccent]
-            )),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 50.0,
-                        child: Icon(
-                          Icons.shopping_cart,
-                          color: Colors.blueAccent,
-                          size: 50.0,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0),
-                      ),
-                      Text(
-                        "Elit Reyon",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30.0),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                flex: 1,
+      fit: StackFit.expand,
+      children: <Widget>[
+        Container(
+          decoration: BoxDecoration(gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.blueAccent, Colors.redAccent]
+          )),
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              child: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(Colors.white70),),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 50.0,
+                      child: Icon(
+                        Icons.location_on,
+                        color: Colors.blueAccent,
+                        size: 50.0,
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.only(top: 20.0),
                     ),
                     Text(
-                      "Aradığınız Her Şey Bu Reyonlarda",
-                      softWrap: true,
-                      textAlign: TextAlign.center,
+                      "GPS Takip Sistemi",
                       style: TextStyle(
-                          fontWeight: FontWeight.w300,
-                          fontSize: 18.0,
-                          color: Colors.white.withOpacity(0.8)),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30.0),
                     )
                   ],
                 ),
-              )
-            ],
-          )
-        ],
-      );
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(Colors.white70),),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                  ),
+                  Text(
+                    "www.gpstakipapp.com",
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 18.0,
+                        color: Colors.white.withOpacity(0.8)),
+                  )
+                ],
+              ),
+            )
+          ],
+        )
+      ],
+    );
   }
 }

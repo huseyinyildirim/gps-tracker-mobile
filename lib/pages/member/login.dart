@@ -1,8 +1,8 @@
 //region Core
 import 'package:flutter/material.dart';
+import 'package:gps_tracker_mobile/models/empty_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 //endregion
 
@@ -14,16 +14,15 @@ import 'package:gps_tracker_mobile/core/functions/validations.dart';
 //endregion
 
 //region Page
-import 'package:gps_tracker_mobile/pages/member/register.dart';
-import 'package:gps_tracker_mobile/pages/member/account.dart';
+import 'package:gps_tracker_mobile/pages/welcome.dart';
 //endregion
 
 //region Widgets
 //endregion
 
 //region Models
-import 'package:gps_tracker_mobile/models/member_model.dart';
-import 'package:gps_tracker_mobile/models/empty_model.dart';
+
+import 'package:gps_tracker_mobile/models/customer_model.dart';
 //endregion
 
 class LoginPage extends StatefulWidget {
@@ -57,8 +56,7 @@ class _LoginPageState extends State<LoginPage> {
       _isLogin = _sharedPreferences.getBool(StorageKey.isLogin) != null ? _sharedPreferences.getBool(StorageKey.isLogin) : false;
 
       if (_isLogin) {
-        //pushNewScreen(context, screen: AccountPage());
-        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new AccountPage()));
+        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new WelcomePage()));
       }
 
       setState(() {});
@@ -139,14 +137,6 @@ class _LoginPageState extends State<LoginPage> {
               child: Text('GİRİŞ YAP', style: TextStyle(color: Colors.green.shade100),),
             ),
             ),
-            SizedBox(height: 50,),
-            InkWell(
-              onTap: (){
-                //pushNewScreen(context, screen: RegisterPage());
-                Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new RegisterPage()));
-              },
-              child: Text("Hesabınız yok mu? Hemen ücretsiz hesap oluşturun.", style: TextStyle(color: Colors.grey.shade700),),
-            ),
           ],
         ),
       ),
@@ -157,32 +147,31 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
 
+      Map data = {
+        'mail': _formMail,
+        'password': _formPassword
+      };
+
+      var body = json.encode(data);
+
       var response = await http.post(AppUrls.login,
-          body: <String, String>{
-            "mail" : _formMail,
-            "password" : _formPassword
-          },
-          headers: <String, String>{
-            HttpHeaders.acceptHeader: 'application/json',
-            HttpHeaders.authorizationHeader: "Bearer ${_accessToken}",
-            'X-DEVICE-ID': _deviceId,
-            'X-TOKEN': _token
-          }
+          body: body,
+        headers: {"Content-Type": "application/json"},
       );
 
       if (response.statusCode == StatusCode.ok) {
 
         Map<String, dynamic> decodeJson = json.decode(response.body);
-        MemberModel member = MemberModel.fromJson(decodeJson);
+        CustomerModel customer = CustomerModel.fromJson(decodeJson);
 
         SharedPreferences.getInstance().then((SharedPreferences sp) {
           _sharedPreferences = sp;
 
-          _sharedPreferences.setInt(StorageKey.memberId, member.data.id);
+          _sharedPreferences.setInt(StorageKey.customerId, customer.data.id);
           _sharedPreferences.setBool(StorageKey.isLogin, true);
 
           Future.delayed(const Duration(seconds: 1), () async {
-            Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new AccountPage()));
+            Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new WelcomePage()));
           });
 
           setState(() {});

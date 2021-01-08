@@ -4,6 +4,7 @@ class StorageKey {
   static final token = "token";
 
   static final memberId = "memberId";
+  static final customerId = "customerId";
   static final isLogin = "isLogin";
 
   static final currentPage = "currentPage";

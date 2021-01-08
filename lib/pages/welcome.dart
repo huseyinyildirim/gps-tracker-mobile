@@ -9,11 +9,7 @@ import 'package:gps_tracker_mobile/core/constants/enums/storage_key.dart';
 //endregion
 
 //region Page
-import 'package:gps_tracker_mobile/pages/member/login.dart';
-import 'package:gps_tracker_mobile/pages/checkout/cart.dart';
-import 'package:gps_tracker_mobile/pages/catalog/categories.dart';
-import 'package:gps_tracker_mobile/pages/member/favorites.dart';
-import 'package:gps_tracker_mobile/pages/home.dart';
+import 'package:gps_tracker_mobile/pages/devices.dart';
 //endregion
 
 //region Widgets
@@ -65,51 +61,33 @@ class _NavBarWidgetState extends State<NavBarWidget> {
 
   List<Widget> _buildScreens() {
     return [
-      HomePage(),
-      CategoriesPage(),
-      FavoritesPage(),
-      CartPage(),
-      LoginPage()
+      DevicesPage()
     ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.home),
-        title: ("Keşfet"),
-        activeColor: Colors.blue,
-        inactiveColor: Colors.grey,
-        //isTranslucent: false,
-      ),
-      PersistentBottomNavBarItem(
         icon: Icon(Icons.menu),
-        title: ("Kategoriler"),
+        title: ("Cihazlarım"),
         activeColor: Colors.teal,
         inactiveColor: Colors.grey,
         //isTranslucent: false,
       ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.favorite),
-        title: ("Favorilerim"),
-        activeColor: Colors.deepOrange,
-        inactiveColor: Colors.grey,
-        //isTranslucent: false,
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(Icons.shopping_cart),
-        title: ("Sepetim"),
-        activeColor: Colors.indigo,
-        inactiveColor: Colors.grey,
-        //isTranslucent: false,
-      ),
-      PersistentBottomNavBarItem(
+      /*PersistentBottomNavBarItem(
         icon: Icon(Icons.supervised_user_circle),
         title: ("Hesabım"),
         activeColor: Colors.indigo,
         inactiveColor: Colors.grey,
         //isTranslucent: false,
       ),
+      PersistentBottomNavBarItem(
+        icon: Icon(Icons.logout),
+        title: ("Çıkış"),
+        activeColor: Colors.indigo,
+        inactiveColor: Colors.grey,
+        //isTranslucent: false,
+      ),*/
     ];
   }
 
@@ -131,13 +109,13 @@ class _NavBarWidgetState extends State<NavBarWidget> {
             setState(() {
               _controller.index = index;
 
-              if (_isLogin == false && index == 2) {
-                _controller.index = 4;
+              /*if (_isLogin == false && index == 0) {
+                Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new LoginPage()));
               }
 
-              if (_isLogin == false && index == 3) {
-                _controller.index = 4;
-              }
+              if (_isLogin == false && index == 1) {
+                Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new LoginPage()));
+              }*/
             });
           },
           selectedIndex: _controller.index,
