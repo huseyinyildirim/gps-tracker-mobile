@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		P4+2uh4HbHSQuOuWU4cNZ/hRlyE=
+		5llYHMZgqS0/+dcK6m4+kNxaZBI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/sentry_flutter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lyOOheeJXMPOHQiuuoZhji7IOZs=
+		Jwcg5+qBPNTJR8/9POv72VR390g=
 		</data>
 		<key>Modules/sentry_flutter.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/sentry_flutter.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		lyOOheeJXMPOHQiuuoZhji7IOZs=
+		Jwcg5+qBPNTJR8/9POv72VR390g=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -132,11 +132,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lyOOheeJXMPOHQiuuoZhji7IOZs=
+			Jwcg5+qBPNTJR8/9POv72VR390g=
 			</data>
 			<key>hash2</key>
 			<data>
-			RWp4ggbjvJ6bozIlYsBmXLqTX20jyEWX+mvWPqhLBe8=
+			+9BkfxSyWd6IRz+uOEMGX0RwbDSxwNbAbvbnHw7cMCA=
 			</data>
 		</dict>
 		<key>Modules/sentry_flutter.swiftmodule/x86_64.swiftdoc</key>
@@ -154,11 +154,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lyOOheeJXMPOHQiuuoZhji7IOZs=
+			Jwcg5+qBPNTJR8/9POv72VR390g=
 			</data>
 			<key>hash2</key>
 			<data>
-			RWp4ggbjvJ6bozIlYsBmXLqTX20jyEWX+mvWPqhLBe8=
+			+9BkfxSyWd6IRz+uOEMGX0RwbDSxwNbAbvbnHw7cMCA=
 			</data>
 		</dict>
 	</dict>
